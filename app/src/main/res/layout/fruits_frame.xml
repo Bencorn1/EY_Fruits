@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/fruits" />
 
     <ImageView
-        android:id="@+id/pokey_img"
+        android:id="@+id/fruit_img"
         android:layout_width="100dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,18 +33,18 @@
         app:srcCompat="@drawable/fruits_3" />
 
     <TextView
-        android:id="@+id/pokey_name"
+        android:id="@+id/fruit_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/pokemon_solid"
+        android:fontFamily="@font/fruit_solid"
         android:text="@string/fruit_name"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="24sp"
+        android:textSize="25sp"
         android:letterSpacing="0.15"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pokey_img"
+        app:layout_constraintStart_toEndOf="@+id/fruit_img"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.505" />
 
