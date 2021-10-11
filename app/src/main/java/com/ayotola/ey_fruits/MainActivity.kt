@@ -1,8 +1,7 @@
 package com.ayotola.ey_fruits
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ayotola.ey_fruits.databinding.ActivityMainBinding
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private var fruitNames = ArrayList<String>()
     private var origin = ArrayList<String>()
     private var nutrients = ArrayList<String>()
-    private var fruitImages = ArrayList<Int>()
+    private var fruitImages = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
