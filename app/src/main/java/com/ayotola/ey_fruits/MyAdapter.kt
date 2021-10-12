@@ -1,20 +1,22 @@
 package com.ayotola.ey_fruits
 
 import android.content.Context
-import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
+
 class MyAdapter(
-    private var context: Context,
-    private var fruitNames: ArrayList<String>,
-    private var origin: ArrayList<String>,
-    private var nutrients: ArrayList<String>,
-    private var fruitImages: ArrayList<String>
+        private var context: Context,
+        private var fruitNames: ArrayList<String>,
+        private var origin: ArrayList<String>,
+        private var nutrients: ArrayList<String>,
+        private var fruitImages: ArrayList<String>,
 ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
@@ -22,7 +24,11 @@ class MyAdapter(
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fruits_frame, parent, false)
         return MyViewHolder(view)
     }
-
+//
+//    fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MyViewHolder? {
+//        val view: View = inflater.inflate(R.layout.single_row, parent, false)
+//        return MyViewHolder(view, mCommunicator)
+//    }
     override fun onBindViewHolder(holder: MyAdapter.MyViewHolder, position: Int) {
 //         set the data in items of the RecyclerView
 
@@ -50,16 +56,24 @@ class MyAdapter(
         // This is used to launch a new activity which goes along with the necessary information.
 
         init {
-            itemView.setOnClickListener {
-                val intent = Intent(itemView.context, Fruit_Details::class.java).apply {
-                    putExtra("NAME", fruitNames)
-                    putExtra("NUTRIENTS", nutrients)
-                    putExtra("ORIGIN", origin)
-                    putExtra("ID", currentId)
-                }
-                itemView.context.startActivity(intent)
-            }
-        }
+            // Declaring fragment manager from making data
+            // transactions using the custom fragment
+            val mFragmentTransaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+            val mFragment = DetailsLay()
 
+            itemView.setOnClickListener {
+//                val intent = Intent(itemView.context, Fruit_Details::class.java).apply {
+//                    putExtra("NAME", fruitNames)
+//                    putExtra("NUTRIENTS", nutrients)
+//                    putExtra("ORIGIN", origin)
+//                    putExtra("ID", currentId)
+                    val mBundle = Bundle()
+                    mBundle.putStringArrayList("NAME", fruitImages)
+                    mBundle.putStringArrayList("NUTRIENTS", nutrients)
+                    mBundle.putStringArrayList("ORIGIN", origin)
+                mFragment.arguments = mBundle
+                mFragmentTransaction.add(R.id.frameLayout, mFragment).commit()
+                }
+            }
     }
 }
