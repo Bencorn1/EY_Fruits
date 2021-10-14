@@ -109,16 +109,16 @@
                 android:orientation="horizontal"
                 android:padding="12dp">
 
-                <TextView
-                    android:id="@+id/fruit_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="15dp"
-                    android:text="@string/price"
-                    android:textColor="@color/teal_700"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/fruit_price"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="start"-->
+<!--                    android:layout_marginStart="15dp"-->
+<!--                    android:text="@string/price"-->
+<!--                    android:textColor="@color/teal_700"-->
+<!--                    android:textSize="17sp"-->
+<!--                    android:textStyle="bold" />-->
 
                 <TextView
                     android:id="@+id/price"
@@ -131,21 +131,21 @@
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/origin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:text="@string/from"
-                    android:textColor="@color/teal_700"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/origin"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="100dp"-->
+<!--                    android:text="@string/from"-->
+<!--                    android:textColor="@color/teal_700"-->
+<!--                    android:textSize="17sp"-->
+<!--                    android:textStyle="bold" />-->
 
                 <TextView
                     android:id="@+id/place"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="100dp"
                     android:text="@string/from"
                     android:textColor="@color/teal_700"
                     android:textSize="17sp"

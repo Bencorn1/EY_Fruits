@@ -1,11 +1,11 @@
 package com.ayotola.ey_fruits
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.ayotola.ey_fruits.databinding.ActivityFruitDetailsBinding
 import java.util.*
-import kotlin.properties.Delegates
 
 class FruitDetails : AppCompatActivity() {
 
@@ -21,9 +21,9 @@ class FruitDetails : AppCompatActivity() {
     private lateinit var img2: ImageView
     private lateinit var img3: ImageView
     private lateinit var img4: ImageView
-    private var fruitId by Delegates.notNull<Int>()
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFruitDetailsBinding.inflate(layoutInflater)
@@ -65,12 +65,12 @@ class FruitDetails : AppCompatActivity() {
         val fOrganic = binding.organicity
 
         fruitName.text = name
-        fruitNutrient.text = nutrients
-        fruitOrigin.text = origin
-        fPrice.text = price
-        fruitQuantity.text = quantity
-        describe.text = description
-        fOrganic.text = organic
+        fruitNutrient.text = "Nutrients: $nutrients"
+        fruitOrigin.text = "Origin: $origin"
+        fPrice.text = "Price: $price"
+        fruitQuantity.text = "Quantity: $quantity"
+        describe.text = "Description: $description"
+        fOrganic.text = "Organic: $organic"
 
     }
 

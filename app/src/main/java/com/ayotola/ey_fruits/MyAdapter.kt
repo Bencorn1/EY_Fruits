@@ -22,11 +22,6 @@ class MyAdapter(val context: Context,var data: List<FruitItems>) : RecyclerView.
         // Get current position of item in recyclerview to bind data and assign values from list
         val myHolder = holder as MyHolder
         val current: FruitItems = data[position]
-//        holder.name.text = current.name
-//        holder.fruitsOrigin.text = current.origin
-//        holder.fruitsNutrients.text = current.nutrients
-//        holder.fruitsPix.text = current.image
-
         holder.setData(current, position)
     }
 

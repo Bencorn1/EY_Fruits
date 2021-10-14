@@ -8,4 +8,5 @@ data class FruitItems(
         var price: String,
         var quantity: String,
         var description: String,
-        var organic: String)
+        var organic: String,
+)

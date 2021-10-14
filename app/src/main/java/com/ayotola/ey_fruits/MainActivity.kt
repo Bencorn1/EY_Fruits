@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                         details.getString("organic")
                 )
 
-
                 data.add(fruitData)
 
             }
