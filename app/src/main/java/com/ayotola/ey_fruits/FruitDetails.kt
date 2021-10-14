@@ -1,31 +1,27 @@
 package com.ayotola.ey_fruits
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.ayotola.ey_fruits.databinding.ActivityFruitDetailsBinding
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-import java.io.IOException
 import java.util.*
+import kotlin.properties.Delegates
 
 class FruitDetails : AppCompatActivity() {
 
     private lateinit var binding: ActivityFruitDetailsBinding
     private lateinit var nutrients: String
     private lateinit var name: String
-    private lateinit var quantity: TextView
+    private lateinit var quantity: String
     private lateinit var origin: String
-    private lateinit var description: TextView
-    private lateinit var organic: TextView
-    private lateinit var prices: TextView
+    private lateinit var description: String
+    private lateinit var organic: String
+    private lateinit var price: String
     private lateinit var img1: ImageView
     private lateinit var img2: ImageView
     private lateinit var img3: ImageView
     private lateinit var img4: ImageView
+    private var fruitId by Delegates.notNull<Int>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +29,6 @@ class FruitDetails : AppCompatActivity() {
         binding = ActivityFruitDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        nutrients = binding.nutrientsList
-//        origin = binding.place
-        quantity = binding.quantity
-        organic = binding.organicity
-        description = binding.descriptions
-        prices = binding.price
         img1 = binding.picture1
         img2 = binding.picture2
         img3 = binding.picture3
@@ -51,55 +41,37 @@ class FruitDetails : AppCompatActivity() {
         name = ""
         nutrients = ""
         origin = ""
+        quantity = ""
+        organic = ""
+        description = ""
+        price = ""
 
         if (bundle != null) {
-            name = bundle.extras?.getString("productName").toString().toUpperCase(Locale.ROOT)
-            nutrients = bundle.extras?.getString("nutrients").toString()
-            origin = bundle.extras?.getString("from").toString()
+            name = bundle.extras?.getString("NAME").toString().toUpperCase(Locale.ROOT)
+            nutrients = bundle.extras?.getString("NUTRIENTS").toString()
+            origin = bundle.extras?.getString("ORIGIN").toString()
+            price = bundle.extras?.getString("PRICE").toString()
+            quantity = bundle.extras?.getString("QUANTITY").toString()
+            description = bundle.extras?.getString("DESCRIPTION").toString()
+            organic = bundle.extras?.getString("ORGANIC").toString()
         }
 
-        try {
-            // since we have JSON array, so we are getting the array
-            //here we are calling a function and that function is returning the JSON array
-            val arr = JSONArray(getAssetJsonData())
+        val fruitName = binding.fruitName
+        val fruitNutrient = binding.nutrientsList
+        val fruitOrigin = binding.place
+        val fPrice = binding.price
+        val fruitQuantity = binding.quantity
+        val describe = binding.descriptions
+        val fOrganic = binding.organicity
 
-            // implement for loop for getting data
-            for (i in 0 until arr.length()) {
+        fruitName.text = name
+        fruitNutrient.text = nutrients
+        fruitOrigin.text = origin
+        fPrice.text = price
+        fruitQuantity.text = quantity
+        describe.text = description
+        fOrganic.text = organic
 
-                // create a JSONObject for fetching data
-                val details: JSONObject = arr.getJSONObject(i)
-
-                // fetch information and store it in array list
-
-                quantity.text = details.getString("quantity")
-                description.text = details.getString("description")
-                organic.text = details.getBoolean("organic").toString()
-                prices.text = details.getString("price")
-//                nutrients.text = details.getString("nutrients")
-//                origin.text = details.getString("from")
-            }
-        } catch (e: JSONException) {
-            //exception
-            e.printStackTrace()
-        }
-
-    }
-
-    private fun getAssetJsonData(): String? {
-        val json: String
-        try {
-            val inputStream = assets.open("data.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.use { it.read(buffer) }
-            json = String(buffer)
-        } catch (ioException: IOException) {
-            ioException.printStackTrace()
-            return null
-        }
-        // print the data
-        Log.i("data", json)
-        return json
     }
 
 }

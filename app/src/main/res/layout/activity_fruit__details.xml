@@ -16,17 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/backBtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
-
     <TextView
-        android:id="@+id/fruit_new_name"
+        android:id="@+id/fruit_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -124,7 +115,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:layout_marginStart="15dp"
-                    android:background="@color/colorAccent"
                     android:text="@string/price"
                     android:textColor="@color/teal_700"
                     android:textSize="17sp"
@@ -146,7 +136,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="100dp"
-                    android:background="@color/colorAccent"
                     android:text="@string/from"
                     android:textColor="@color/teal_700"
                     android:textSize="17sp"

@@ -1,3 +1,11 @@
 package com.ayotola.ey_fruits
 
-data class FruitItems(val image: String, val name: String, val nutrients: String, val origin:String)
+data class FruitItems(
+        var image: String,
+        var name: String,
+        var nutrients: String,
+        var origin: String,
+        var price: String,
+        var quantity: String,
+        var description: String,
+        var organic: String)
