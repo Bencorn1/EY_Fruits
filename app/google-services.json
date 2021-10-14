@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "155057044600",
+    "project_id": "ey-fruits-app",
+    "storage_bucket": "ey-fruits-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155057044600:android:9cb820b5871bce71f3818d",
+        "android_client_info": {
+          "package_name": "com.ayotola.ey_fruits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155057044600-60pjmt1a4r5i0if2h3c37id3tq7t6o48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0ts4ErfGGhfF5cPk7YeJiNwG-5L6TBa8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155057044600-60pjmt1a4r5i0if2h3c37id3tq7t6o48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

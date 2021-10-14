@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EY_Fruits">
         <activity android:name=".FoodDetails"></activity>
-        <activity android:name=".FruitDetails" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".store.FruitDetails" />
+        <activity android:name=".store.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

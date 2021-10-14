@@ -1,4 +1,4 @@
-package com.ayotola.ey_fruits
+package com.ayotola.ey_fruits.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ayotola.ey_fruits.store.FruitDetails
+import com.ayotola.ey_fruits.store.FruitItems
+import com.ayotola.ey_fruits.R
 
 class MyAdapter(val context: Context,var data: List<FruitItems>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     // Inflate the layout when viewholder created
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fruits_frame, parent, false)
         return MyHolder(view)
     }

@@ -1,11 +1,12 @@
-package com.ayotola.ey_fruits
+package com.ayotola.ey_fruits.store
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.ayotola.ey_fruits.databinding.ActivityFruitDetailsBinding
+import com.google.firebase.storage.FirebaseStorage
 import java.util.*
+
 
 class FruitDetails : AppCompatActivity() {
 
@@ -22,8 +23,8 @@ class FruitDetails : AppCompatActivity() {
     private lateinit var img3: ImageView
     private lateinit var img4: ImageView
 
+    private val storage = FirebaseStorage.getInstance()
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFruitDetailsBinding.inflate(layoutInflater)
@@ -38,13 +39,6 @@ class FruitDetails : AppCompatActivity() {
         // Get the values of the keys that were sent on click from Recycler Adapter.
 
         val bundle = intent
-        name = ""
-        nutrients = ""
-        origin = ""
-        quantity = ""
-        organic = ""
-        description = ""
-        price = ""
 
         if (bundle != null) {
             name = bundle.extras?.getString("NAME").toString().toUpperCase(Locale.ROOT)
@@ -72,6 +66,8 @@ class FruitDetails : AppCompatActivity() {
         describe.text = "Description: $description"
         fOrganic.text = "Organic: $organic"
 
+//        // Create a reference to a file from a Google Cloud Storage URI
+//        val gsReference = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/mavise picture 29.jpeg")
+//        Glide.with(baseContext).load(gsReference).into(img1)
     }
-
 }

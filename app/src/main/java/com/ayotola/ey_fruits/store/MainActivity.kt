@@ -1,9 +1,10 @@
-package com.ayotola.ey_fruits
+package com.ayotola.ey_fruits.store
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ayotola.ey_fruits.adapter.MyAdapter
 import com.ayotola.ey_fruits.databinding.ActivityMainBinding
 import org.json.JSONArray
 import org.json.JSONException

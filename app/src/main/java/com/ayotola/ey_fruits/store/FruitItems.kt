@@ -1,4 +1,4 @@
-package com.ayotola.ey_fruits
+package com.ayotola.ey_fruits.store
 
 data class FruitItems(
         var image: String,
