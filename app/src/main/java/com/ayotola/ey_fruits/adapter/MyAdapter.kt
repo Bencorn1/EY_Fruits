@@ -51,6 +51,7 @@ class MyAdapter(val context: Context,var data: List<FruitItems>) : RecyclerView.
                     putExtra("QUANTITY", currentFruit.quantity)
                     putExtra("ORGANIC", currentFruit.organic)
                     putExtra("DESCRIPTION", currentFruit.description)
+                    putExtra("IMAGE", currentFruit.image)
                 }
                 itemView.context.startActivity(intent)
             }

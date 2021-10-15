@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.ayotola.ey_fruits.R
 import com.ayotola.ey_fruits.databinding.ActivityFruitDetailsBinding
 import com.bumptech.glide.Glide
-import com.google.firebase.storage.FirebaseStorage
 import java.util.*
 
 
@@ -22,10 +22,10 @@ class FruitDetails : AppCompatActivity() {
     private lateinit var price: String
     private lateinit var img1: ImageView
     private lateinit var img2: ImageView
-    private lateinit var img3: ImageView
+    private lateinit var img3: String
     private lateinit var img4: ImageView
 
-    val storage = FirebaseStorage.getInstance()
+//    val storage = FirebaseStorage.getInstance()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,6 @@ class FruitDetails : AppCompatActivity() {
 
         img1 = binding.picture1
         img2 = binding.picture2
-        img3 = binding.picture3
         img4 = binding.picture4
 
         // Gets the data from the passed bundle
@@ -51,6 +50,7 @@ class FruitDetails : AppCompatActivity() {
             quantity = bundle.extras?.getString("QUANTITY").toString()
             description = bundle.extras?.getString("DESCRIPTION").toString()
             organic = bundle.extras?.getString("ORGANIC").toString()
+            img3 = bundle.extras?.getString("IMAGE").toString()
         }
 
         val fruitName = binding.fruitName
@@ -60,6 +60,7 @@ class FruitDetails : AppCompatActivity() {
         val fruitQuantity = binding.quantity
         val describe = binding.descriptions
         val fOrganic = binding.organicity
+        val fImg3 = binding.picture3
 
         fruitName.text = name
         fruitNutrient.text = "Nutrients: $nutrients"
@@ -68,21 +69,22 @@ class FruitDetails : AppCompatActivity() {
         fruitQuantity.text = "Quantity: $quantity"
         describe.text = "Description: $description"
         fOrganic.text = "Organic: $organic"
+        fImg3.text = img3
 
         fetchData()
     }
-    // Create a reference to a file from a Google Cloud Storage URI
+    // Create a reference to a file from a Cloudinary Storage URI
     private fun fetchData() {
-        val gsReference = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/fruits 2.png")
-        Glide.with(baseContext).load(gsReference).into(img1)
+        Glide.with(baseContext).load("https://res.cloudinary.com/dftldy3sr/image/upload/v1634278403/unnamed_xgostd.png")
+            .error(R.drawable.fruits)
+            .into(img1)
 
-        val gsRef = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/fruits 3.png")
-        Glide.with(baseContext).load(gsRef).into(img2)
+        Glide.with(baseContext).load("https://res.cloudinary.com/dftldy3sr/image/upload/v1634278403/png-transparent-coconut-download-with-transparent-background-free-fruits_kavjye.png")
+            .error(R.drawable.fruits)
+            .into(img2)
 
-        val ref = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/19-orange-png-image-download-thumb.png")
-        Glide.with(baseContext).load(ref).into(img3)
-
-        val refMe = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/unnamed.png")
-        Glide.with(baseContext).load(refMe).into(img4)
+        Glide.with(baseContext).load("https://res.cloudinary.com/dftldy3sr/image/upload/v1634278402/19-orange-png-image-download-thumb_vrdgp2.png")
+            .error(R.drawable.fruits)
+            .into(img4)
     }
 }
