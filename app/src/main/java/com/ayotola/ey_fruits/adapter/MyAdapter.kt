@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.ayotola.ey_fruits.store.FruitDetails
-import com.ayotola.ey_fruits.store.FruitItems
+import com.ayotola.ey_fruits.controller.FruitDetails
+import com.ayotola.ey_fruits.model.FruitItems
 import com.ayotola.ey_fruits.R
 
 class MyAdapter(val context: Context,var data: List<FruitItems>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

@@ -1,9 +1,11 @@
-package com.ayotola.ey_fruits.store
+package com.ayotola.ey_fruits.controller
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.ayotola.ey_fruits.databinding.ActivityFruitDetailsBinding
+import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
 
@@ -23,8 +25,9 @@ class FruitDetails : AppCompatActivity() {
     private lateinit var img3: ImageView
     private lateinit var img4: ImageView
 
-    private val storage = FirebaseStorage.getInstance()
+    val storage = FirebaseStorage.getInstance()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFruitDetailsBinding.inflate(layoutInflater)
@@ -66,8 +69,20 @@ class FruitDetails : AppCompatActivity() {
         describe.text = "Description: $description"
         fOrganic.text = "Organic: $organic"
 
-//        // Create a reference to a file from a Google Cloud Storage URI
-//        val gsReference = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/mavise picture 29.jpeg")
-//        Glide.with(baseContext).load(gsReference).into(img1)
+        fetchData()
+    }
+    // Create a reference to a file from a Google Cloud Storage URI
+    private fun fetchData() {
+        val gsReference = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/fruits 2.png")
+        Glide.with(baseContext).load(gsReference).into(img1)
+
+        val gsRef = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/fruits 3.png")
+        Glide.with(baseContext).load(gsRef).into(img2)
+
+        val ref = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/19-orange-png-image-download-thumb.png")
+        Glide.with(baseContext).load(ref).into(img3)
+
+        val refMe = storage.getReferenceFromUrl("gs://ey-fruits-app.appspot.com/unnamed.png")
+        Glide.with(baseContext).load(refMe).into(img4)
     }
 }
