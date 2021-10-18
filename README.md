@@ -1,4 +1,4 @@
-# EY_Fruits
+## EY_Fruits
 
 EY Fruits application is a two-page mobile food / fruit application detailing the necessary information for the food and fruits in the attached Json file. 
 The page one contains a RecyclerView that displays all the fruits and food in the JSON file alongside their Images, their nutrients and their origin. The page two 
@@ -79,18 +79,7 @@ contains more information about the selected food /fruit in page one. There are 
 ]
 ```
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-
-### How to use
-
-A step by step guide on how to use the app's features
-This is the screenshots of the application.
-[]
-
-## Built with
+## Technologies built with
 
 * Kotlin - The programming language used
 * Model View Controller (MVC) - Design Pattern
